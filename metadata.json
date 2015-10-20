@@ -1,0 +1,15 @@
+{
+  "name": "snahider-jenkins",
+  "version": "0.1.0",
+  "author": "snahider",
+  "summary": "Manage a Jenkins Server",
+  "license": "Apache-2.0",
+  "source": "",
+  "project_page": "(https://github.com/snahider/test-driven-infrastructure)",
+  "issues_url": "https://github.com/snahider/test-driven-infrastructure/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {"name":"rtyler-jenkins","version_requirement":">= 1.6.1"}
+  ]
+}
+

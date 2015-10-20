@@ -1,0 +1,23 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    camptocamp-archive (0.8.1)
+    darin-zypprepo (1.0.2)
+    nanliu-staging (1.0.3)
+    puppetlabs-apt (2.2.0)
+      puppetlabs-stdlib (< 5.0.0, >= 4.5.0)
+    puppetlabs-java (1.4.2)
+      puppetlabs-stdlib (< 5.0.0, >= 2.4.0)
+    puppetlabs-stdlib (4.9.0)
+    rtyler-jenkins (1.6.1)
+      camptocamp-archive (>= 0.8.0)
+      darin-zypprepo (< 2.0.0, >= 1.0.1)
+      nanliu-staging (< 2.0.0, >= 1.0.0)
+      puppetlabs-apt (< 3.0.0, >= 0.0.3)
+      puppetlabs-java (< 2.0.0, >= 1.0.1)
+      puppetlabs-stdlib (< 5.0.0, >= 4.6.0)
+
+DEPENDENCIES
+  puppetlabs-stdlib (>= 1.0.0)
+  rtyler-jenkins (>= 1.6.1)
+
