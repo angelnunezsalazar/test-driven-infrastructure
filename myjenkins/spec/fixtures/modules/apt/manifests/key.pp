@@ -28,7 +28,7 @@ define apt::key (
   }
 
   if $key_source != undef {
-    #warning('$key_source is deprecated and will be removed in the next major release. Please use $source instead.')
+    warning('$key_source is deprecated and will be removed in the next major release. Please use $source instead.')
     $_source = $key_source
   } else {
     $_source = $source

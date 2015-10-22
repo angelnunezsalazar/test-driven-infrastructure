@@ -50,7 +50,7 @@ define jenkins::plugin(
     warning('jenkins::plugin::group is deprecated and has no effect -- see jenkins::group')
   }
   if $create_user {
-    #warning('jenkins::plugin::create_user is deprecated and has no effect')
+    warning('jenkins::plugin::create_user is deprecated and has no effect')
   }
 
   if ($version != 0) {
@@ -114,8 +114,7 @@ define jenkins::plugin(
     }
 
     archive::download { $plugin:
-      url              => "file:///var/lib/jenkins/plugins-cache/${plugin}",
-      #url              => $download_url,
+      url              => $download_url,
       src_target       => $::jenkins::plugin_dir,
       allow_insecure   => true,
       follow_redirects => true,
@@ -134,28 +133,6 @@ define jenkins::plugin(
       group   => $::jenkins::group,
       mode    => '0644',
     }
-  }else{
-    $enabled_ensure = $enabled ? {
-      false   => present,
-      default => absent,
-    }
-
-    # Allow plugins that are already installed to be enabled/disabled.
-    file { "${::jenkins::plugin_dir}/${plugin}.disabled":
-      ensure  => $enabled_ensure,
-      owner   => $::jenkins::user,
-      group   => $::jenkins::group,
-      mode    => '0644',
-      require => File["${::jenkins::plugin_dir}/${plugin}"],
-      notify  => Service['jenkins'],
-    }
-
-    file { "${::jenkins::plugin_dir}/${plugin}" :
-      owner   => $::jenkins::user,
-      group   => $::jenkins::group,
-      mode    => '0644',
-    }
-
   }
 
   if $manage_config {

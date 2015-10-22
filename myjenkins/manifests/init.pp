@@ -1,7 +1,4 @@
-class myjenkins(
-  $plugins = undef
-){
-
+class myjenkins($plugins = undef){
   include jenkins
   include myjenkins::default_plugins
 

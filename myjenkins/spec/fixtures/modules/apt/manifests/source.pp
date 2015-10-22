@@ -29,7 +29,7 @@ define apt::source(
   $_before = Apt::Setting["list-${title}"]
 
   if $include_src != undef {
-    #warning("\$include_src is deprecated and will be removed in the next major release, please use \$include => { 'src' => ${include_src} } instead")
+    warning("\$include_src is deprecated and will be removed in the next major release, please use \$include => { 'src' => ${include_src} } instead")
   }
 
   if $include_deb != undef {
@@ -57,7 +57,7 @@ define apt::source(
   }
 
   if $key_source != undef {
-    #warning("\$key_source is deprecated and will be removed in the next major release, please use \$key => { 'source' => ${key_source} } instead.")
+    warning("\$key_source is deprecated and will be removed in the next major release, please use \$key => { 'source' => ${key_source} } instead.")
   }
 
   if $trusted_source != undef {
