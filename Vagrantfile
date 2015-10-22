@@ -4,7 +4,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "ubuntu14.04-x86-p7"
+  config.vm.box = "ubuntu14.04-x86-p8"
   
   config.vm.network "forwarded_port", guest: 8080, host: 8686 #Jenkins
 
