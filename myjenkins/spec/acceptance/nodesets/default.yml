@@ -4,7 +4,7 @@ HOSTS:
       - masterless
     platform: ubuntu-1404-x86_64
     hypervisor: vagrant
-    box: ubuntu14.04-x86-p7
+    box: ubuntu14.04-x86-p8
 CONFIG:
   masterless: true
   consoleport: 443
