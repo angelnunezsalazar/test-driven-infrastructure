@@ -4,7 +4,13 @@ describe 'jenkins class' do
 
   context 'default parameters' do
     it 'should should run successfully' do
-      pp = "include myjenkins"
+      pp = <<-EOS
+        exec { "apt-update":
+          command => "/usr/bin/apt-get update"
+        }
+        
+        include 'myjenkins'
+      EOS
 
       # Run it twice and test for idempotency
       expect(apply_manifest(pp).exit_code).to_not eq(1)

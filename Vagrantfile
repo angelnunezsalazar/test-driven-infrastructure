@@ -4,12 +4,12 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "ubuntu14.04-x86-p8"
+  config.vm.box = "ubuntu14.04-x86"
   
   config.vm.network "forwarded_port", guest: 8080, host: 8686 #Jenkins
 
   config.vm.provider :virtualbox do |vb|
-	  vb.name = "vagrant-jenkins-p8"
+	  vb.name = "vagrant-jenkins"
   end
 
   # Make sure we have properly udpated apt

@@ -3,6 +3,9 @@ class myjenkins::default_plugins{
 
   jenkins::plugin{$default_plugins:}
 
-  contain myjenkins::plugin::git
-  #contain myjenkins::plugin::gradle
+  package{'git':
+    ensure=> installed
+  }
+
+  jenkins::plugin{'git':}
 }

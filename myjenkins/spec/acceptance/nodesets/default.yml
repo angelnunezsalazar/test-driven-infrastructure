@@ -4,7 +4,8 @@ HOSTS:
       - masterless
     platform: ubuntu-1404-x86_64
     hypervisor: vagrant
-    box: ubuntu14.04-x86-p8
+    box: ubuntu14.04-x86
+    box_url: https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-i386-vagrant-disk1.box
 CONFIG:
   masterless: true
   consoleport: 443

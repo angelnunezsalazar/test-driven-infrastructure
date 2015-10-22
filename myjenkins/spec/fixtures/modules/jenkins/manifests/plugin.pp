@@ -41,16 +41,16 @@ define jenkins::plugin(
   validate_string($digest_type)
 
   if $plugin_dir {
-    #warning('jenkins::plugin::plugin_dir is deprecated and has no effect -- see jenkins::localstatedir')
+    warning('jenkins::plugin::plugin_dir is deprecated and has no effect -- see jenkins::localstatedir')
   }
   if $username {
-    #warning('jenkins::plugin::username is deprecated and has no effect -- see jenkins::user')
+    warning('jenkins::plugin::username is deprecated and has no effect -- see jenkins::user')
   }
   if $group {
-    #warning('jenkins::plugin::group is deprecated and has no effect -- see jenkins::group')
+    warning('jenkins::plugin::group is deprecated and has no effect -- see jenkins::group')
   }
   if $create_user {
-    #warning('jenkins::plugin::create_user is deprecated and has no effect')
+    warning('jenkins::plugin::create_user is deprecated and has no effect')
   }
 
   if ($version != 0) {
@@ -114,8 +114,7 @@ define jenkins::plugin(
     }
 
     archive::download { $plugin:
-      #url              => $download_url,
-      url              => "/var/lib/jenkins/plugins-cache/${plugin}",
+      url              => $download_url,
       src_target       => $::jenkins::plugin_dir,
       allow_insecure   => true,
       follow_redirects => true,
