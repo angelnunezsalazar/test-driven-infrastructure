@@ -9,7 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 8080, host: 8686 #Jenkins
 
   config.vm.provider :virtualbox do |vb|
-	  vb.name = "vagrant-jenkins-p7"
+	  vb.name = "vagrant-jenkins-p8"
   end
 
   # Make sure we have properly udpated apt

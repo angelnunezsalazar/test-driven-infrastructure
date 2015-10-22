@@ -115,7 +115,7 @@ define jenkins::plugin(
 
     archive::download { $plugin:
       #url              => $download_url,
-      url              => "/var/lib/jenkins/plugins-cache/${plugin}"
+      url              => "/var/lib/jenkins/plugins-cache/${plugin}",
       src_target       => $::jenkins::plugin_dir,
       allow_insecure   => true,
       follow_redirects => true,

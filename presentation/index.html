@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+	<html class="sl-root base export loaded">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Test Driven Infrastructure: Slides</title>
+		<meta name="description" content="Slides">
+
+		<link rel="stylesheet" type="text/css" href="lib/offline-v2.css">
+	</head>
+	<body class="reveal-viewport theme-font-montserrat theme-color-beige-brown">
+		<div class="reveal">
+			<div class="slides">
+				<section data-id="dc55eb7998fa9f4e1365b5e213ad453b"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 210px; height: auto;" data-block-id="0feda13ab741de26fa62a01bb44050a5"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="font-size: 137%; color: rgb(34, 34, 34);">
+<h1>Test Driven Infrastructure</h1>
+</div></div></section><section data-id="bc2cc539be7cab885cdd9925be41b02e"><div class="sl-block" data-block-type="text" style="width: 430px; left: 23px; top: 87px; height: auto;" data-block-id="993cdf28b3b3d18f81dc86e688a430eb"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: center; z-index: 11; color: rgb(68, 68, 68);">
+<h2>Angel Núñez</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 430px; left: 23px; top: 161px; height: auto;" data-block-id="31654fd0e846c17a028fb3b2d8d771e6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat." style="z-index: 13; text-align: center; color: rgb(68, 68, 68);">
+<h3>@snahider</h3>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 454px; height: 454px; left: 480px; top: 87px;" data-block-id="a84005f0e9631512e6b2d0bdc3b6a7aa"><div class="sl-block-content" style="z-index: 12; border-width: 1px;"><img style="" data-natural-width="565" data-natural-height="565" data-src="test-driven-infrastructure/1835046-coderetreat_2.png"></div></div>
+<div class="sl-block" data-block-type="text" style="width: 430px; left: 23px; top: 350px; height: auto;" data-block-id="ef8edfee59b22f07ddabbe765a7fa2b2"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat." style="z-index: 14; text-align: center; color: rgb(68, 68, 68);">
+<h3>Agile Developer, Consultant &amp; Trainer</h3>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="4a29abf0f3321ff8f66b1e8956466e87" style="min-width: 30px; min-height: 30px; width: 242.139px; height: 69px; left: 117px; top: 472px;"><div class="sl-block-content" style="z-index: 15;"><img style="" data-natural-width="758" data-natural-height="216" data-src="test-driven-infrastructure/1863303-logo-kleer.png"></div></div></section><section data-id="8da3560477acbb4bc92809a0ed22b157"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 210px; height: auto;" data-block-id="6d69a658b4d9850e5ebac9c14ca9495e"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Infrastructure<br>
+as<br>
+Code</h1>
+</div></div></section><section data-id="7e72a543ffcfb53391a7fe87a43d89dc"><div class="sl-block" data-block-type="text" style="width: 839px; left: 61px; top: 103px; height: auto;" data-block-id="cb3efbf37754d9d3f392c0a7829107f2"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Desafíos de<br>
+Operaciones e Infrastructura</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 827px; left: 67px; top: 295px; height: auto;" data-block-id="0e2a6f744a9a24e63712b7b985a8ac08"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="text-align: left;" dir="ui">
+<ul>
+	<li>Alta disponibilidad.</li>
+	<li>Respuesta rápida a petición de infraestructura.</li>
+	<li>Evitar 'Configuration Drifts'.</li>
+	<li>Alta confianza al realizar cambios.</li>
+	<li>Auditoría, versionamiento y seguimiento a los cambios.</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="d0e93d6eb10adc94a5b5aaafa4d875ff"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h2>Scripts y Virtualización no son suficientes.</h2>
+</div></div></section><section data-id="0031fef38e69018dad6caaabccc06b13"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="18dcc651835029fbcc7cfd781800c37d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>¿Qué es<br>
+Infrastructure as Code?</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 280px; height: auto;" data-block-id="d03a387815744ebd445f51bdf95b00a9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="text-align: left; z-index: 11;">
+<p>Significa escribir código<br>
+<span style="font-size:0.7em">(usualmente utilizando un lenguaje de alto nivel)</span></p>
+
+<p>para aprovisionar la infraestructura</p>
+
+<p><span style="font-size:0.7em">(proveer todo lo necesario para su funcionamiento)</span></p>
+
+<p>utilizando buenas prácticas de desarrollo de software <span style="font-size:0.7em">(prácticas que ya se utilizan en el desarrollo de aplicaciones).</span></p>
+</div></div></section><section data-id="5df55437818df623121b201f18a46c8b"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="a832282a8d4ab5595c290244535692ae"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Aparecen las Herramientas</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="33859435776e66748d0812304bdf06ed" style="min-width: 30px; min-height: 30px; width: 360px; height: 98.2265px; left: 520px; top: 490px;"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="733" data-natural-height="200" data-src="test-driven-infrastructure/1842505-cfengine.png"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="9c76c7e6e56574464cdd27e2e903278d" style="min-width: 30px; min-height: 30px; width: 213.706px; height: 210px; left: 593px; top: 210px;"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="346" data-natural-height="340" style="" data-src="test-driven-infrastructure/1842507-chef.png"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="89d0fcf077cdcbf920cae2bd9162cecc" style="min-width: 30px; min-height: 30px; width: 294.706px; height: 233px; left: 113px; top: 397px;"><div class="sl-block-content" style="z-index: 14;"><img style="" data-natural-width="874" data-natural-height="691" data-src="test-driven-infrastructure/1842512-ansible.png"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="ca984ba30505d8321f5c47ec34419acf" style="min-width: 30px; min-height: 30px; width: 360px; height: 104.265px; left: 80px; top: 228px;"><div class="sl-block-content" style="z-index: 15;"><img style="" data-natural-width="694" data-natural-height="201" data-src="test-driven-infrastructure/1842513-puppetlabs.png"></div></div></section><section data-id="91b312323f6f2ec7bd7c7891686a7009"><div class="sl-block" data-block-type="text" style="width: 410px; left: 43px; top: 197px; height: auto;" data-block-id="2f607eb788388b8eec8c004c77b32293"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 11;">
+<h3 style="text-align: center;">Puppet</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 410px; left: 508px; top: 197px; height: auto;" data-block-id="9cd5533eb828e0896367a4c182ed68c6"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 12;">
+<h3 style="text-align: center;">Chef</h3>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="4aca6f7a2123319035a26f30e2ab2401" style="min-width: 30px; min-height: 30px; width: 440px; height: 314px; left: 28px; top: 254px;"><div class="sl-block-content" style="z-index: 13;"><pre class="ruby"><code>  package { 'apache2':
+    ensure =&gt; installed,
+  }
+
+  service { 'apache2':
+    ensure =&gt; running,
+    require =&gt; Package['apache2'],
+  }
+
+  file { '/var/www/html/index.html':
+    content =&gt; '&lt;html&gt;hello world&lt;/html&gt;',
+    owner =&gt; 'root',
+    mode =&gt; '640',
+    ensure =&gt; present,
+  }</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="5eeb3ca3b5c69a71e6087dabe215dd70" style="min-width: 30px; min-height: 30px; width: 440px; height: 314px; left: 493px; top: 254px;"><div class="sl-block-content" style="z-index: 14;"><pre><code>  package 'apache2' do
+    action :install
+  end
+
+  service 'apache2' do
+    action [:enable, :start]
+  end
+
+
+  file '/var/www/html/index.html' do
+    content '&lt;html&gt;hello world&lt;/html&gt;'
+    owner 'root'
+    mode '640'
+    action :create
+  end</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="24a28ce313b2722b46a400b19f9d0fb0" style="height: auto; min-width: 30px; min-height: 30px; width: 699px; left: 131px; top: 591px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;">
+<p>Características: Abstracción e Idempotencia</p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="d8f35f306c9d098c160aca83895e6bf3" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 16px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16;">
+<h2>¿Cómo es el código de infraestructura?</h2>
+</div></div></section><section data-id="b132e3f1579c7946bf2b6102152464c2"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="e536fff0e8d5e7d72963f66beff4a018"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Nuestro Contexto</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 173px; height: auto;" data-block-id="af0b5fd38a8188681cc1c6c4e092c52a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="text-align: left; z-index: 11;" dir="ui">
+<ul>
+	<li>Nuestra empresa a invertido en infraestructura como código<span> para manejar diversos servidores.</span><br>
+	 </li>
+	<li>El área de desarrollo está compuesta por 4 divisiones de productos, cada división trabaja con su propio ambiente de IC utilizando Jenkins.<br>
+	 </li>
+	<li>Gestionamos los servidores donde se encuentra Jenkins a través de un módulo de Puppet.</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 25px; height: auto;" data-block-id="a258f385b551624dfa72f1299cb95cd4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Módulo de Jenkins</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="8f63af884e4e941a3e6b82f5c31d951a" style="min-width: 30px; min-height: 30px; width: 382px; height: 210px; left: 80px; top: 184px;"><div class="sl-block-content" style="z-index: 11;"><pre><code>class myjenkins(
+  $plugins = undef
+){
+  include jenkins
+  include myjenkins::default_plugins
+
+  if ($plugins){
+    jenkins::plugin { $plugins: }
+  }
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 382px; height: 122px; left: 498px; top: 184px;" data-block-id="89534402731c195811161f72626fa71a"><div class="sl-block-content" style="z-index: 13;"><pre><code>class myjenkins::default_plugins{
+  $default_plugins = ['greenballs']
+
+  jenkins::plugin{$default_plugins:}
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 410px; left: 275px; top: 124px; height: auto;" data-block-id="8431e4de200f94e15e6e703b7dcccefb"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 14;">
+<h3 style="text-align:center">El código</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 410px; left: 275px; top: 431px; height: auto;" data-block-id="0085dbc17dfa6978a36527732b3e841d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 15;">
+<h3 style="text-align:center">Cómo se utiliza</h3>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 480px; height: 162px; left: 240px; top: 489px;" data-block-id="b63052d34f18f53b7cad30835f05304c"><div class="sl-block-content" style="z-index: 16;"><pre><code>node 'ciserver'{
+  class {'myjenkins':
+    plugins =&gt; ['chucknorris','htmlpublisher']
+  }
+
+  include 'sonar'
+}
+
+</code></pre></div></div></section><section data-id="833ff92d2e184f9b2fac86cb71934064"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 253px; height: auto;" data-block-id="6248962a44f36bf46d146d39c58d66e7"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Probando <br>
+Infrastructure Code</h1>
+</div></div></section><section data-id="e148e6105d517fb71cd555a68c3b4650"><div class="sl-block" data-block-type="text" style="width: 426px; left: 24px; top: 199px; height: auto;" data-block-id="ba9c23ce247296d54f81e9328670612d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: center; font-size: 70%; z-index: 11;">
+<h2>Unit Test</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 426px; left: 24px; top: 275px; height: auto;" data-block-id="32f08be09ee86ca9f3ae08f190ab04ec"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 12; font-size: 86%;" dir="ui">
+<p>Probar unitariamente el código sin provisionar (alterar) un nodo real.</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 410px; left: 500px; top: 199px; height: auto;" data-block-id="7f0dd19fd8c5b2d1815403228be19151"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: center; font-size: 70%; z-index: 13;">
+<h2>Integration Tests</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 410px; left: 500px; top: 275px; height: auto;" data-block-id="506804513c902a187653073ef6aeef4f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 14; font-size: 86%;">
+<p>Verificar que el código provisiona un nodo real de la manera esperada.</p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="e28294e21e47e95b870ade87c3a6fd5b" style="height: auto; min-width: 30px; min-height: 30px; width: 640px; left: 160px; top: 70px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; line-height: 0.975;" data-has-line-height="">
+<h2>Tipos de Pruebas</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="a79b2d1a6c5a24767367b30dc73bafb7" style="height: auto; min-width: 30px; min-height: 30px; width: 426px; left: 24px; top: 366px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; font-size: 70%;">
+<ul>
+	<li style="text-align:left">(Chef) Simular una ejecución y verificar si la llamada a un recurso se ha realizado.<br>
+	 </li>
+	<li style="text-align:left">(Puppet) Generar el catálogo y verificar si un recurso se encuentra presente.</li>
+</ul>
+
+<p style="text-align:left"> </p>
+
+<p style="text-align:left"> </p>
+</div></div></section><section data-id="343fb2fe85beb6474fb7686b81830747"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 253px; height: auto;" data-block-id="7aa92345951aeb7b630b1d4686c58fd6"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Unit<br>
+Testing</h1>
+</div></div></section><section data-id="b5de05f6ad87876b80b0c6dfe24cc5d0"><div class="sl-block" data-block-type="text" style="width: 800px; left: 79px; top: 115px; height: auto;" data-block-id="02e67cb8ee99fa933888a065428bbbd6"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;" dir="ui">
+<h3>RSpec-Puppet</h3>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 752.231px; height: 464px; left: 103px; top: 215px;" data-block-id="7300fd0eb13806d30d01069055defe41"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="1010" data-natural-height="623" style="" data-src="test-driven-infrastructure/1834911-Screen_Shot_2015-10-15_at_1.36.37_AM.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 700px; left: 129px; top: 174px;" data-block-id="d4b5f8b2dff10831914af9abc3fdfeb6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: center; font-size: 80%;">
+<p><a href="https://github.com/rodjek/rspec-puppet" target="_blank">https://github.com/rodjek/rspec-puppet</a></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 13px; height: auto;" data-block-id="6c014b00f5382f32c2365567e1437365"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 14;" dir="ui">
+<h2>Herramienta</h2>
+</div></div></section><section data-id="fa952e1cbfef595a491d23f30912837e"><div class="sl-block" data-block-type="text" style="width: 489px; left: 436px; top: 140px; height: auto;" data-block-id="e75f1c820885b8a7ab649d91c062c44c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: center; z-index: 10;">
+<h3>Tests</h3>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 382px; height: 259px; left: 0px; top: 214px;" data-block-id="6d6fe1b774b461e71cca3eb4cb24941c"><div class="sl-block-content" style="z-index: 11;"><pre class="ruby"><code># manifests/init.pp
+
+class myjenkins(
+  $plugins = undef
+){
+
+  include jenkins
+
+  if ($plugins){
+    jenkins::plugin { $plugins: }
+  }
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="code" style="width: 560px; height: 326px; left: 400px; top: 214px;" data-block-id="219e73e9058288471a9dc849039416da"><div class="sl-block-content" style="z-index: 12; font-size: 94%;"><pre class="ruby"><code># spec/classes/jenkins_spec.rb
+
+describe 'myjenkins' do
+  context 'the following should be in the catalog' do
+    it { should contain_class('jenkins')}
+  end
+
+  context 'with plugins' do
+    let(:params){
+      {
+        :plugins =&gt; ['htmlpublisher']
+      }
+    }
+    it { should contain_jenkins__plugin('htmlpublisher')}
+  end
+end</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 382px; left: 0px; top: 140px; height: auto;" data-block-id="2a6476077c581cdc6adc8fc3e84f0546"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: center; z-index: 13;">
+<h3>Producción</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 33px; height: auto;" data-block-id="9677a70b8a7cbe3dccbf20687949f415"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 15;" dir="ui">
+<h2>Unit Tests</h2>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 489px; left: 236px; top: 140px; height: auto;" data-block-id="95297bf8975ca7cd7756d5102a210811"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: center; z-index: 10;">
+<h3>Mock</h3>
+</div></div>
+
+<div class="sl-block" data-block-type="code" style="width: 520px; height: 225px; left: 220px; top: 210px;" data-block-id="32cca3c4240d75733dc568b759a77691"><div class="sl-block-content" style="z-index: 12;"><pre class="ruby"><code>  # spec/spec_helper.rb
+
+  RSpec.configure do |c|
+    c.default_facts = {
+      :operatingsystem        =&gt; 'Ubuntu', 
+      :operatingsystemrelease =&gt; '14.04',
+      :osfamily               =&gt; 'Debian', 
+      :path                   =&gt; '/usr/local/bin/'
+    }
+  end</code></pre></div></div>
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 33px; height: auto;" data-block-id="d8879f4269233682a0d98fbe5a203ef1"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 15;" dir="ui">
+<h2>Unit Tests</h2>
+</div></div></section><section data-id="00682797893a8e20038941cf418b242c"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 253px; height: auto;" data-block-id="b0ea17e44791d24e725c2cf526c5c4cd"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Integration<br>
+Testing</h1>
+</div></div></section><section data-id="73e1c7f90ff25ed352a5419c7abc1d29"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 140px; height: auto;" data-block-id="e97a0cf46e4dbb5f1674ac106cb52b02"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Desafíos al Realizar Integration Testing</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 840px; left: 80px; top: 338px; height: auto;" data-block-id="cba264c8121a6b35ba9cc5974f3a9275"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text">
+<ul>
+	<li>Crear ambientes de pruebas<br>
+	de manera fácil y repetible.</li>
+	<li>Interrogar el estado real del servidor.</li>
+	<li>Un Test Harness que combine lo anterior.</li>
+</ul>
+</div></div></section><section data-id="3255980fa3ef97563b1a01f78d85cda0"><div class="sl-block" data-block-type="text" style="width: 800px; left: 79px; top: 50px; height: auto;" data-block-id="60945bd6a39517cc615bcb6686fd1b0c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Vagrant</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 750px; height: 409.968px; left: 105px; top: 184px;" data-block-id="808ec2fa30b895ac4bb46f29365795f8"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="933" data-natural-height="510" style="" data-src="test-driven-infrastructure/1834049-Screen_Shot_2015-10-14_at_7.58.34_PM.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 700px; left: 129px; top: 141px;" data-block-id="9758613684bf4483c9e63f5cc91718ea"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: center; font-size: 80%;">
+<p><a href="https://www.vagrantup.com/" target="_blank">https://www.vagrantup.com/</a></p>
+</div></div></section><section data-id="057c6d8eb79b70267abd0519f0493c7f"><div class="sl-block" data-block-type="text" style="width: 800px; left: 79px; top: 50px; height: auto;" data-block-id="714facaafa1c473b5a329bfeb354af41"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Serverspec</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 700px; height: 423.605px; left: 129px; top: 181.5px;" data-block-id="3e5492d122e787dc904e2b1a19745a15"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1165" data-natural-height="705" style="" data-src="test-driven-infrastructure/1833977-Screen_Shot_2015-10-14_at_7.21.15_PM.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 700px; left: 129px; top: 141px;" data-block-id="46bf4a00d6d6f1efa32cf56b555adbad"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: center; font-size: 80%;">
+<p><a href="http://serverspec.org/" target="_blank">http://serverspec.org/</a></p>
+</div></div></section><section data-id="44715643aad632261579616957b86cc5"><div class="sl-block" data-block-type="text" style="width: 800px; left: 79px; top: 50px; height: auto;" data-block-id="4912612a041ead2c40ea758b7a717b27"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Beaker</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 783.797px; height: 430px; left: 88px; top: 184px;" data-block-id="5f7cd4edf0888f02ba6022d7e338db18"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1008" data-natural-height="553" style="" data-src="test-driven-infrastructure/1834068-Screen_Shot_2015-10-14_at_8.05.59_PM.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 700px; left: 129px; top: 141px;" data-block-id="d1e43a906335890889cfed4c90b38a6f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; text-align: center; font-size: 80%;">
+<p><a href="https://github.com/puppetlabs/beaker" target="_blank">https://github.com/puppetlabs/beaker</a></p>
+</div></div></section><section data-id="917025b63e36be855e7d3f23c1fac113"><div class="sl-block" data-block-type="text" style="width: 410px; left: 498px; top: 189px; height: auto;" data-block-id="819014681aec8286e9d6008f908eda52"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: center; z-index: 10;">
+<h3>Prueba</h3>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="88bfc28ecc876633a7dac52452c9dfa3" style="min-width: 30px; min-height: 30px; width: 514px; height: 317px; left: 446px; top: 243px;"><div class="sl-block-content" style="z-index: 11;"><pre class="ruby"><code># spec/acceptance/jenkins_spec.rb
+
+describe 'jenkins class' do
+  it 'should work with no errors' do
+    pp = "include myjenkins"
+    # Run it twice and test for idempotency
+    expect(apply_manifest(pp).exit_code).to eq(0)
+    expect(apply_manifest(pp).exit_code).to eq(0)
+  end
+  
+  #Serverspec
+  describe service('jenkins') do
+    it { should be_enabled }
+  end
+end</code></pre></div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 427px; height: 207px; left: 0px; top: 243px;" data-block-id="858f4a568b964e0ded3fd987756f71a2"><div class="sl-block-content" style="z-index: 12;"><pre class="ruby"><code># spec/acceptance/nodesets/default.yml
+
+HOSTS:
+  ubuntu-1404-x86:
+    roles:
+      - masterless
+    platform: ubuntu-1404-x86_64
+    hypervisor: vagrant
+    box: ubuntu14.04-x86</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 410px; left: 0px; top: 189px; height: auto;" data-block-id="cbae67336e43b9b903408cb3923026a4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: center; z-index: 13;" dir="ui">
+<h3>Ambiente de Prueba</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 66px; height: auto;" data-block-id="1ddaf56a837a63b17ddeb8b00841ebc1"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 15;" dir="ui">
+<h2>Integration Tests</h2>
+</div></div></section><section data-id="724d56d45e40d261c38601f23d7831bf"><div class="sl-block" data-block-type="text" style="width: 523px; left: 219px; top: 110px; height: auto;" data-block-id="b7c5f44ae587f95d28127a359dbc8fec"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: center; z-index: 14;">
+<h3>Configuración del<br>
+Ambiente</h3>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 619px; height: 289px; left: 171px; top: 224px;" data-block-id="21d6d8dd79d28ef86291495ecba9fc82"><div class="sl-block-content" style="z-index: 15;"><pre class="ruby"><code># spec/spec_helper_acceptance.rb
+
+RSpec.configure do |c| 
+  # Configure all nodes in nodeset
+  c.before :suite do
+    hosts.each do |host|
+      # Install this module
+      copy_module_to(host, :source =&gt; module_root,
+                           :module_name =&gt; 'myjenkins')
+      # copies all the module dependencies
+      rsync_to(host ,fixture_modules, '/etc/puppet/modules/')
+    end
+  end
+end</code></pre></div></div></section><section data-id="e0729546169fbf96ad8e4186baa53c7e"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 253px; height: auto;" data-block-id="be5048a45b73dbe7a424d1a3c4097566"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Test Driven Infrastructure</h1>
+</div></div></section><section data-id="7544fb323edefb2a8170b7ee057edf7f"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 24px; height: auto;" data-block-id="65b3b8d0f1c11b2923e9c8051ac769b6"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>El Ciclo<br>
+Test Driven Infrastructure</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="7f131322c2f46a06e7b7deaf21e4f608" style="min-width: 30px; min-height: 30px; width: 733.654px; height: 327px; left: 113px; top: 288px;"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="875" data-natural-height="390" data-src="test-driven-infrastructure/1861616-tdi.png"></div></div>
+<div class="sl-block" data-block-type="text" style="width: 426px; left: 9px; top: 226px; height: auto;" data-block-id="526747467bc233a9a1d279d683217f24"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: center; font-size: 70%; z-index: 13;">
+<h2>Integration Test</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 410px; left: 485px; top: 226px; height: auto;" data-block-id="f8895f4b72357a8d8d03fecf2d73b275"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: center; font-size: 70%; z-index: 14;">
+<h2>Unit Test</h2>
+</div></div></section><section data-id="c57a614e57e8a84162b2f469511150e4"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="37d515633a660e466d24801e88cf55f0"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>El Caso</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 729px; left: 116px; top: 167px; height: auto;" data-block-id="61a2a143852ac176a792d514057f74cc"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="text-align: center; z-index: 11;">
+<p>Varios equipos tienen la iniciativa de empezar a trabajar con Git.</p>
+
+<p> </p>
+
+<p>Como encargados de gestionar la infraestructura necesitamos soportar Git en los ambientes de Integración Continua.</p>
+
+<p> </p>
+
+<p>Para eso vamos a extender el módulo de Jenkins para que incluya el Plugin de git por defecto y también instale Git en el sistema.</p>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="d50ec690bdce2d1eba4fa2cbee36234b"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>Let's Code!</h1>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 102px; height: auto;" data-block-id="6459affb5370d3c6644ab8ccede53fd5"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2>Reflexiones</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 742px; left: 109px; top: 210px; height: auto;" data-block-id="cafb87ba972a0bd8776a75ab13b39468"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="text-align: left;">
+<ul>
+	<li>¿A nivel Unitario estamos diseñando?</li>
+	<li>¿Escribimos una prueba por cada recurso?</li>
+	<li>¿Hay practicas que no se trasladan directamente desde software a infraestructura?</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 29px; height: auto;" data-block-id="b32d06526a9e27edd8b0a4bea086ad34"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Porqué CD y Devops<br>
+necesitan<br>
+Infrastructure as Code</h2>
+</div></div>
+
+
+<div class="sl-block" data-block-type="text" data-block-id="c3a45d635d379fa3f16797bc5dfdf85e" style="height: auto; min-width: 30px; min-height: 30px; width: 764px; left: 80px; top: 296px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left;">
+<p style="text-align:left">Infrastructure as Code es un habilitador:</p>
+
+<ul>
+	<li style="text-align:left">Permite agregar la infraestructura al pipeline de Continuous Delivery.</li>
+	<li style="text-align:left">Permite que Operaciones pueda utilizar prácticas ágiles para gestionar la infraestructura.</li>
+	<li style="text-align:left">Rompe barreras entre Dev y OPS.</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 66px; top: 43px; height: auto;" data-block-id="87417cd98c2e5f7e550f6e7e05f7e7e4"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Preguntas</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="dbe061bb3f709924753d3ebc7d154464" style="min-width: 30px; min-height: 30px; width: 680px; height: 452.998px; left: 140px; top: 168px;"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="1351" data-natural-height="900" data-src="test-driven-infrastructure/1861834-preguntas.jpg"></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 66px; top: 22px; height: auto;" data-block-id="cdc800deede36583cc8999c54a7f44bc"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Referencias</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="161b97e89567b7c28b30dd7f2a49942a" style="height: auto; min-width: 30px; min-height: 30px; width: 763px; left: 99px; top: 132px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p style="text-align:left">Presentación (código y slides):<br>
+<a href="https://github.com/snahider/test-driven-infrastructure" target="_blank">https://github.com/snahider/test-driven-infrastructure</a></p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="bf4dec9cefd0edff3292e1e28fb9f3f9" style="min-width: 30px; min-height: 30px; width: 320px; height: 419.84px; left: 117px; top: 242px;"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="500" data-natural-height="656" data-src="test-driven-infrastructure/1863141-tdi-chef-book.jpg"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="fe9cec696026de7f5b9a35e4f030b9ed" style="min-width: 30px; min-height: 30px; width: 320.122px; height: 420px; left: 523px; top: 242px;"><div class="sl-block-content" style="z-index: 14;"><img style="" data-natural-width="500" data-natural-height="656" data-src="test-driven-infrastructure/1863150-infcode-book.jpg"></div></div></section>
+			</div>
+		</div>
+
+		<script>
+			var SLConfig = {"deck": {"id":516391,"slug":"test-driven-infrastructure","title":"Test Driven Infrastructure","description":"","visibility":"all","published_at":"2015-10-15T00:10:55.418Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/secure/aff95d/decks.jpg","view_count":1,"user":{"id":2522,"username":"snahider","name":"Angel Nuñez","description":"","thumbnail_url":"https://www.gravatar.com/avatar/8b06c2a344e23a3b3d3e69f7cbad698f?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","pro":true,"enterprise":false,"enterprise_manager":false,"settings":{"id":22192,"present_controls":true,"present_upsizing":true,"present_notes":true},"registered":true},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"montserrat","theme_color":"beige-brown","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"should_loop":false,"share_notes":null,"rtl":false,"version":2,"notes":{"73e1c7f90ff25ed352a5419c7abc1d29":"- A Testing Harness que combine lo anterior, es decir una herramienta que nos permita no solo crear nuestras pruebas sino ejecutarlas en ambientes y en nuestras pruebas poder hacer asertos sobre el estado del servidor.","0031fef38e69018dad6caaabccc06b13":"\n"}}};
+			SLConfig.current_user = {
+				name: "Angel Nuñez",
+				username: "snahider",
+				pro: true
+			};
+		</script>
+
+		<script src="lib/head.min.js"></script>
+		<script src="lib/reveal.min.js"></script>
+		<script>
+			// Make Slides speaker notes available in the reveal.js speaker view
+			if( SLConfig.deck.notes ) {
+				[].forEach.call( document.querySelectorAll( '.reveal .slides section' ), function( slide ) {
+
+					var value = SLConfig.deck.notes[ slide.getAttribute( 'data-id' ) ];
+					if( value && typeof value === 'string' ) {
+						slide.setAttribute( 'data-notes', value );
+					}
+
+				} );
+			}
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				mouseWheel: false,
+				showNotes: SLConfig.deck.share_notes,
+
+				autoSlide: SLConfig.deck.auto_slide_interval || 0,
+				autoSlideStoppable: true,
+
+				rolling_links: SLConfig.deck.rolling_links || true,
+				center: SLConfig.deck.center || false,
+				loop: SLConfig.deck.should_loop || false,
+				rtl: SLConfig.deck.rtl || false,
+
+				transition: SLConfig.deck.transition,
+				backgroundTransition: SLConfig.deck.background_transition,
+
+				maxScale: 2,
+
+				dependencies: [
+					{ src: 'lib/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/highlight/highlight.js', async: true, callback: function() { hljs.initHighlighting(); hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/reveal-plugins/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+
+		
+
+	</body>
+</html>
