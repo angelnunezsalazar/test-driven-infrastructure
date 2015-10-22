@@ -4,24 +4,22 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "ubuntu14.04-x86"
-  config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-i386-vagrant-disk1.box"
+  config.vm.box = "ubuntu14.04-x86-p7"
   
   config.vm.network "forwarded_port", guest: 8080, host: 8686 #Jenkins
 
-  config.vm.synced_folder "./", "/etc/puppet/modules/myjenkins"
-
   config.vm.provider :virtualbox do |vb|
-	  vb.name = "vagrant-jenkins"
+	  vb.name = "vagrant-jenkins-p7"
   end
 
   # Make sure we have properly udpated apt
-  config.vm.provision 'shell',
-        :inline => 'if [ ! -f "/apt-cached" ]; then apt-get update && touch /apt-cached; fi'
+  #config.vm.provision 'shell',
+       #:inline => 'if [ ! -f "/apt-cached" ]; then apt-get update && touch /apt-cached; fi'
+      #:inline => 'apt-get update'
 
   config.vm.provision :puppet do |puppet|
-	  puppet.manifests_path = "examples"
+	  puppet.manifests_path = "myjenkins/examples"
     puppet.manifest_file = "init.pp"
-		puppet.module_path = ['spec/fixtures/modules']
+		puppet.module_path = ['.','myjenkins/spec/fixtures/modules']
   end
 end
