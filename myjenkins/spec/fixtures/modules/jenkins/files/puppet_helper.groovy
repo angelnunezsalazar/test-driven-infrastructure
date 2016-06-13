@@ -245,7 +245,7 @@ class Actions {
     }
 
     // it is not possible to directly set the API token because the user
-    // visible value is actualy a digest of the "plain text" token after it
+    // visible value is actually a digest of the "plain text" token after it
     // is unecnrypted.
     def api_token_plain = conf['api_token_plain']
     if (api_token_plain) {

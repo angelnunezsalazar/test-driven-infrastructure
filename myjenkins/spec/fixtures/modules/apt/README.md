@@ -428,7 +428,7 @@ Manages the Apt sources in `/etc/apt/sources.list.d/`.
 
   * `repos`: Specifies a component of the Apt repository. Valid options: a string. Default: 'main'.
 
-* `include_deb`: Specify whether to request the distrubution's compiled binaries. Valid options: 'true' and 'false'. Default: undef. **Note**: This parameter is deprecated and will be removed in future versions of the module.
+* `include_deb`: Specify whether to request the distribution's compiled binaries. Valid options: 'true' and 'false'. Default: undef. **Note**: This parameter is deprecated and will be removed in future versions of the module.
 
 * `include_src`: Specifies whether to request the distribution's uncompiled source code. Valid options: 'true' and 'false'. Default: undef. **Note**: This parameter is deprecated and will be removed in future versions of the module.
 

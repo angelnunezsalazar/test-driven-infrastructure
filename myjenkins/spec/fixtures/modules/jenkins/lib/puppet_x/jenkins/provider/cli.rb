@@ -29,7 +29,7 @@ class PuppetX::Jenkins::Provider::Cli < Puppet::Provider
   # jenkins requires authorization, it shortens the run time be elemating the
   # need for each subclass to retest for an authenication failure.
   #
-  # XXX this needs some consideration for how to handle the transistion from
+  # XXX this needs some consideration for how to handle the transition from
   # security being enabled to disabled
   class_variable_set(:@@cli_auth_required, false)
 

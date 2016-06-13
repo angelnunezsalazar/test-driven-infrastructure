@@ -10,7 +10,7 @@
 #   Use the most up to date version of jenkins
 #
 # lts = true
-#   Use LTS verison of jenkins
+#   Use LTS version of jenkins
 #
 # port = 8080 (default)
 #   Sets firewall port to 8080 if puppetlabs-firewall module is installed

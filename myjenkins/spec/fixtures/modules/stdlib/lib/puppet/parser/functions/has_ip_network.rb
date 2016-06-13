@@ -7,7 +7,7 @@ module Puppet::Parser::Functions
 Returns true if the client has an IP address within the requested network.
 
 This function iterates through the 'interfaces' fact and checks the
-'network_IFACE' facts, performing a simple string comparision.
+'network_IFACE' facts, performing a simple string comparison.
     EOS
   ) do |args|
 

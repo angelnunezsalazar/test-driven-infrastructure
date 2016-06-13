@@ -4,7 +4,7 @@
 # for PuppetX::Jenkins::Provider::Clihelper based providers.
 #
 # Default and fact data is managed internal to the
-# PuppetX::Jenkins::Provider::Clihelper class for compatiblity with the puppet
+# PuppetX::Jenkins::Provider::Clihelper class for compatibility with the puppet
 # resource face.  No defaults should be set in this classes definition.
 class jenkins::cli::config(
   $cli_jar                 = undef,
