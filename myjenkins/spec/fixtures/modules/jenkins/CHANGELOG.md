@@ -21,7 +21,7 @@ This is a manually kept file, and may not entirely reflect reality
 * [#386](https://github.com/jenkinsci/puppet-jenkins/pull/386) - set_security() does not save jenkins state
 * [#387](https://github.com/jenkinsci/puppet-jenkins/pull/387) - Avoid referring to class objects directly in the Groovy helper
 * [#388](https://github.com/jenkinsci/puppet-jenkins/pull/388) - Fix relationship for pinned files
-* [#389](https://github.com/jenkinsci/puppet-jenkins/pull/389) - remove seperate resources for handling plugin extension
+* [#389](https://github.com/jenkinsci/puppet-jenkins/pull/389) - remove separate resources for handling plugin extension
 * [#390](https://github.com/jenkinsci/puppet-jenkins/pull/390) - Adds Examples for various platforms for Jenkins
 * [#391](https://github.com/jenkinsci/puppet-jenkins/pull/391) - use ensure_packages() to manage the daemon package
 * [#395](https://github.com/jenkinsci/puppet-jenkins/pull/395) - Fix username quoting

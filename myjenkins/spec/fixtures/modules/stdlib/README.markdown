@@ -375,7 +375,7 @@ Returns 'true' if the client has the requested IP address on some interface. Thi
 
 #### `has_ip_network`
 
-Returns 'true' if the client has an IP address within the requested network. This function iterates through the `interfaces` fact and checks the `network_IFACE` facts, performing a simple string comparision. *Type*: rvalue.
+Returns 'true' if the client has an IP address within the requested network. This function iterates through the `interfaces` fact and checks the `network_IFACE` facts, performing a simple string comparison. *Type*: rvalue.
 
 #### `has_key`
 

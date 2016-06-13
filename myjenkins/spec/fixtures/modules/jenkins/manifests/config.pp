@@ -15,7 +15,7 @@ class jenkins::config {
     mode   => '0755',
   }
 
-  # ensure_resource is used to try to maintain backwards compatiblity with
+  # ensure_resource is used to try to maintain backwards compatibility with
   # manifests that were able to external declare resources due to the
   # old conditional behavior of jenkins::plugin
   if $::jenkins::manage_user {
